@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+
+/* .wrapper {
+    display: flex;
+} */
+
+.score-board {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px;
+}
+
+.game-board {
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: space-evenly;
+    border-collapse: collapse;
+    
+    & td {
+        cursor: pointer;
+        height: 200px;
+        width: 200px;
+        border: 2px solid black;
+    }
+
+    & tr td:nth-child(1) {
+        border-left: none;
+    }
+
+    & tr td:nth-last-child(1) {
+        border-right: none;
+    }
+}
+
+.row1 {
+    border-top: none;
+    & td {
+        border-top: none;
+    }
+}
+
+.row3 {
+    & td {
+        border-bottom: none;
+    }
+}
