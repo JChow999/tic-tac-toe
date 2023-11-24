@@ -2,10 +2,6 @@ h1 {
     text-align: center;
 }
 
-/* .wrapper {
-    display: flex;
-} */
-
 .score-board {
     display: flex;
     justify-content: space-evenly;
@@ -13,16 +9,21 @@ h1 {
 }
 
 .game-board {
-    /* flex-grow: 1; */
     display: flex;
     justify-content: space-evenly;
     border-collapse: collapse;
-    
+    font-size: 15rem;
+
     & td {
-        cursor: pointer;
         height: 200px;
         width: 200px;
         border: 2px solid black;
+    }
+
+    & div {
+        width: 200px;
+        height: 200px;
+        box-sizing: border-box;
     }
 
     & tr td:nth-child(1) {
@@ -31,6 +32,32 @@ h1 {
 
     & tr td:nth-last-child(1) {
         border-right: none;
+    }
+}
+
+.empty {
+    cursor:pointer;
+}
+
+.cross {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    &::after {
+        display: inline-block;
+        content: "X";
+        width: 100%;
+    }
+}
+
+.circle {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    &::after {
+        display: inline-block;
+        content: "O";
+        width: 100%;
     }
 }
 

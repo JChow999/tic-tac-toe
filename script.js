@@ -1,23 +1,28 @@
+const allBoxes = document.querySelectorAll(".game-board div")
 
-function Gameboard() {
-    let board = ["", "", "", 
-                "", "", "",
-                "", "", ""]
+console.log(allBoxes)
 
-    const win_conditions = [[1, 2, 3]
-    ]
+// function Gameboard() {
+//     let board = ["", "", "", 
+//                 "", "", "",
+//                 "", "", ""]
 
-    function resetBoard() {
-        board = ["", "", "", 
-        "", "", "",
-        "", "", ""]
-    }
-}
+//     const win_conditions = [[1, 2, 3]
+//     ]
+
+//     function resetBoard() {
+//         board = ["", "", "", 
+//         "", "", "",
+//         "", "", ""]
+//     }
+// }
 
 winningConditions = [
     [0, 4, 8],
     [2, 4, 6],
 ]
+
+
 
 let board = ["X", "O", "X", 
             "O", "X", "X",
@@ -41,7 +46,6 @@ for (n = 0; n < 7; n += 3) {
     }
     winningConditions.push(tempBoard)
 }
-console.log(winningConditions)
 
 // function checkWinner() {
 //     let symbol = "X"
