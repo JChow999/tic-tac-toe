@@ -1,8 +1,9 @@
-const allBoxes = document.querySelectorAll(".game-board div");
 const boardCircleScore = document.querySelector("#circle-score");
 const boardCrossScore = document.querySelector("#cross-score");
+const startBtn = document.querySelector("#start-btn");
 
-let currentPlayer = "O"
+let allBoxes = document.querySelectorAll(".game-board div");
+let currentPlayer = ""
 let crossScore = 0;
 let circleScore = 0;
 
@@ -30,8 +31,8 @@ function chooseStarter() {
         currentPlayer = prompt("Please choose who is starting, O or X").toUpperCase();
     }
 
-    if (currentPlayer != "X" && currentPlayer != "O") {
-        let startingPlayer = prompt("Please choose who is starting, O or X").toUpperCase();
+    if (currentPlayer != "X" || currentPlayer != "O") {
+        currentPlayer = prompt("Please choose who is starting, O or X").toUpperCase();
     }
 }
 
@@ -50,10 +51,11 @@ function updateScore() {
 }
 
 function updateClickable(symbol) {
+    allBoxes = document.querySelectorAll(".game-board div");
     for (n = 0; n < allBoxes.length; n++) {
         allBoxes[n].addEventListener('click', (e) => {
             if (e.target.className == "empty") {
-                e.target.style.cursor = 
+                e.target.style.cursor = "pointer";
                 e.target.className = (currentPlayer == "O" ? "circle" : "cross")
                 board[e.target.getAttribute("data-index-number")] = currentPlayer;
                 updateClickable();
@@ -70,6 +72,9 @@ function updateClickable(symbol) {
                     updateScore()
                     // resetBoard()
                     // chooseStarter()
+                }
+                else if (document.querySelectorAll(".empty").length <= 0) {
+                    alert("It's a tie!");
                 }
                 else {
                     if (currentPlayer == "X") {
@@ -114,7 +119,12 @@ function checkWinner() {
     }
 }
 
-updateClickable()
-// chooseStarter()
+startBtn.addEventListener("click", () => {
+    chooseStarter()
+    updateClickable()
+    resetBoard()
+})
+
+// updateClickable()
 
 // console.log(checkWinner())

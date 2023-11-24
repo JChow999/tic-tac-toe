@@ -2,11 +2,20 @@ h1 {
     text-align: center;
 }
 
+#start-btn {
+    position: relative;
+    margin-bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
 .score-board {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: 50px;
+    margin-bottom: 20px;
 }
 
 .game-board {
@@ -34,10 +43,6 @@ h1 {
     & tr td:nth-last-child(1) {
         border-right: none;
     }
-}
-
-.empty {
-    cursor:pointer;
 }
 
 .cross {
